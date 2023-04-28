@@ -16,4 +16,7 @@ else:
         
 print("los numeros divisores", a,"son:",b)
 print(contador)
-print("es un numero perfecto",suma-a)
+if suma-a == a:
+    print("es perfercto",suma-a)
+else: 
+    print("no es perfecto:",suma-a)
