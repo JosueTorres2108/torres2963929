@@ -40,9 +40,10 @@ def menor(lista):
     return menor        
     
 def ascendente(lista):
-    for i in range(len(lista) - 1):
-        if lista[i] > lista[i + 1]:  
-            lista[i], lista[i + 1] = lista[i + 1], lista[i] 
+    for i in range(len(lista)-1):
+        for j in range(i+1,len(lista)):
+            if lista[i]>lista[j]:
+                lista[i],lista[j]=lista[j],lista[i]
     return lista
 
 def descendente(lista):
@@ -73,24 +74,24 @@ def mediana(lista):
     return mediana
 
 def buscar(lista,x):
-    cont=0
+    indice = lista.index(x)
     if x in lista:
-        for i in range(len(lista)): 
-            if x==lista[i]:
-                cont+=1
-        return f"El numero existe"
-    else:
-        return "El numero no existe"
+        print("el numero " + str(x) + " si existe en la lista y esta en la posicion {} ".format(indice))
+        print("esta en la lista " + str(lista.count(x)) + " veces")
+    else:                
+        print("el numero " + str(x) + " no existe en la lista")
 
 lista=llenarLista(21,100)
 print(lista)
-print(sumaLista(lista))
-print(round(promedioLista(lista),2))
-print(mayor(lista))
-print(menor(lista))
-print(ascendente(lista))
-print(descendente(lista))
-print(moda(lista))
-print(mediana(lista))
-num=int(input("Escibra el numero"))
+print("la suma del total de los numeros de la lista es: " + str(sumaLista(lista)))
+print("el promedio total de la lista es: " + str(round(promedioLista(lista),2)))
+print("el numero mayor de la lista es: " + str(mayor(lista)))
+print("el numero menor de la lista es: " +str(menor(lista)))
+print("Lista ordenada de forma ascendete: " +str(ascendente(lista)))
+print("Lista ordenada de forma descendete: " +str(descendente(lista)))
+print("la moda de la lista es: " + str(moda(lista)))
+print("la mediana de la lista es: " + str(mediana(lista)))
+num=int(input("Escribra el numero a buscar: "))
+buscar(lista,num)
+
 
