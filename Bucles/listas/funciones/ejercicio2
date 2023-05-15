@@ -1,0 +1,9 @@
+import random
+
+def llenarLista(tam,rango):
+    lista=[random.randrange(rango) for i in range(tam)]    
+    return lista
+
+
+lista=llenarLista(15,125)
+print("lista: ",lista)
