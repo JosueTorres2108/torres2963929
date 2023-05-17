@@ -5,7 +5,7 @@
 import random
 
 def llenarLista(tamaño,rango):
-    tama=random.randint(15,tamaño)
+    tama=random.randint(15,125)
     while tama==tama:
         tama=random.randint(15,tamaño)
         if tama%5==0:
@@ -20,7 +20,7 @@ def ordenAscen(lista):
                 lista[i]=lista[j]
                 lista[j]=aux 
     return lista
-        
+         
 def quintiles(lista,valor):
     quintile=valor*len(lista)/5
     mayor=int(quintile)
@@ -31,7 +31,7 @@ def quintiles(lista,valor):
     else: 
         return f"No se hallar el quintil"
 
-lista1=llenarLista(100,1.79)
+lista1=llenarLista(100,2.00)
 print(ordenAscen(lista1))
 print(len(lista1))
 x=1
